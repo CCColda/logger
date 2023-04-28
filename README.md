@@ -10,7 +10,7 @@ int main() {
 
     Logger::console = Logger::openStaticOutputStream(std::cout);
 
-    Logger::outputs[Logger::Level::ERROR] = Logger::openFileOutput("./errors.log");
+    Logger::outputs[Logger::LVL_ERROR] = Logger::openFileOutput("./errors.log");
     // or use: Logger::setAllOutputs to set every level
 
     // below this log level, everything will be printed and written to files

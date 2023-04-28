@@ -10,11 +10,11 @@
 class Logger {
 public:
 	enum Level {
-		ERROR = 0,
-		WARN = 1,
-		INFO = 2,
-		VERBOSE = 3,
-		VERBOSE2 = 4,
+		LVL_ERROR = 0,
+		LVL_WARN = 1,
+		LVL_INFO = 2,
+		LVL_VERBOSE = 3,
+		LVL_VERBOSE2 = 4,
 		count
 	};
 

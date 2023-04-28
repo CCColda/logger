@@ -112,7 +112,7 @@ const char *getLogLevelString(Logger::Level level)
 
 /* static */ Logger::Output Logger::console = nullptr;
 
-/* static */ Logger::Level Logger::logLevel = Logger::Level::VERBOSE;
+/* static */ Logger::Level Logger::logLevel = Logger::Level::LVL_VERBOSE;
 
 /* static */ void Logger::writeToOutput(const Output &out, const std::string &text)
 {
@@ -163,10 +163,10 @@ Logger &Logger::level(Level ilevel, const std::string &text)
 
 Logger &Logger::anonymous(const std::string &text)
 {
-	if (Level::VERBOSE > logLevel)
+	if (Level::LVL_VERBOSE > logLevel)
 		return *this;
 
-	const auto [sign_color, text_color] = getLogStyle(VERBOSE);
+	const auto [sign_color, text_color] = getLogStyle(LVL_VERBOSE);
 
 	if (console)
 		(*console) << CLR_RESET
@@ -178,17 +178,17 @@ Logger &Logger::anonymous(const std::string &text)
 
 Logger &Logger::log(const std::string &text)
 {
-	return level(Level::INFO, text);
+	return level(Level::LVL_INFO, text);
 }
 
 Logger &Logger::warning(const std::string &text)
 {
-	return level(Level::WARN, text);
+	return level(Level::LVL_WARN, text);
 }
 
 Logger &Logger::error(const std::string &text)
 {
-	return level(Level::ERROR, text);
+	return level(Level::LVL_ERROR, text);
 }
 
 /* static */ Logger::Output Logger::openStaticOutputStream(std::ostream &stream)
