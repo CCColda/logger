@@ -1,0 +1,7 @@
+# build files
+obj
+bin
+
+# editor
+.vscode
+build
