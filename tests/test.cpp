@@ -20,7 +20,7 @@ TEST_CASE("Logger", "[Logger]")
 		for (int i = 0; i < 16; ++i)
 			outputText[i] = GENERATE('A', 'z');
 
-		outputText[17] = '\0';
+		outputText[16] = '\0';
 
 		{
 			auto fileOutput = Logger::openFileOutput("./logger_test_file.tmp");
