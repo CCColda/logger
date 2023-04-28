@@ -1,10 +1,13 @@
-name: C/C++ CI
+name: CMake Test
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
+env:
+  BUILD_TYPE: Release
 
 jobs:
   build:
